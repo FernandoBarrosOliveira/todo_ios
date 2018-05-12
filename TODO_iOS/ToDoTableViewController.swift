@@ -79,9 +79,10 @@ class ToDoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Del") { (action, currentIndexPath) in
-            print("a")
+            let item = self.itemTodoList[indexPath.row]
+            self.ref?.child("itemtodo").child(item.id).setValue(nil)
+            //print("a")
         }
-        
         return [deleteAction]
     }
 
