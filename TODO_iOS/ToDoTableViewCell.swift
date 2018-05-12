@@ -9,11 +9,13 @@ import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var swtConclude: UISwitch!
+    @IBOutlet weak var lblPriority: UILabel!
+    @IBOutlet weak var lblHour: UILabel!
+    @IBOutlet weak var lblDate: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
