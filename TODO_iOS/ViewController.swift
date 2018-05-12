@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var btnLogin: UITextField!
 
     var ref: DatabaseReference?
     override func viewDidLoad() {

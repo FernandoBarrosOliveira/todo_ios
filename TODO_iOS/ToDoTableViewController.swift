@@ -24,6 +24,7 @@ class ToDoTableViewController: UITableViewController {
         let refItem = ref?.child("itemtodo")
         refItem?.observe(.value, with: { (snapshot) in
             if snapshot.childrenCount > 0 {
+                self.itemTodoList.removeAll()
                 for items in snapshot.children.allObjects as! [DataSnapshot]{
                     let itemObject = items.value as? [String: AnyObject]
                     let titulo =  itemObject?["titulo"] as? String ?? ""
@@ -40,7 +41,7 @@ class ToDoTableViewController: UITableViewController {
                     
                     
                 }
-                //self.companyTableView.reloadData()
+                self.tbvToDoList.reloadData()
                 
                 
             }
