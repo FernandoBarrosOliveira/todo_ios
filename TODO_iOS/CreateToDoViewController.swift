@@ -12,10 +12,12 @@ import Firebase
 class CreateToDoViewController: UIViewController {
 
     @IBOutlet weak var txtTitle: UITextField!
-    @IBOutlet weak var txtDescription: UITextView!
+    
+    @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var dtpDate: UIDatePicker!
     @IBOutlet weak var txtPriotiry: UITextField!
     
+    @IBOutlet weak var btnToDo: UIButton!
     var ref: DatabaseReference?
     
     @IBAction func btnCreateClick(_ sender: Any) {

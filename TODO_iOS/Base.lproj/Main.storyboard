@@ -239,7 +239,9 @@
                         <viewLayoutGuide key="safeArea" id="JkT-5E-ovD"/>
                     </view>
                     <connections>
+                        <outlet property="btnToDo" destination="BHN-D9-CM9" id="Y1v-Lp-mbv"/>
                         <outlet property="dtpDate" destination="xks-nL-bBp" id="DnZ-IL-fkl"/>
+                        <outlet property="txtDescription" destination="f5A-WF-EsD" id="WIY-OM-S7f"/>
                         <outlet property="txtPriotiry" destination="8h3-FX-oGN" id="c4Q-NM-5yv"/>
                         <outlet property="txtTitle" destination="Tdl-8h-riv" id="IUX-ne-jSQ"/>
                     </connections>
