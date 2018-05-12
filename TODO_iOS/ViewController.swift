@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var ref: DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnLogin.isEnabled = true
 //        ref = Database.database().reference()
  //      add()
 //        readAll()
@@ -38,6 +39,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnLoginClick(_ sender: Any) {
+        
+        btnLogin.isEnabled = false
+        
         Auth.auth().signIn(withEmail: txtUser.text!, password: txtPassword.text!, completion: { (user, error) in
             
             if error == nil{
@@ -45,6 +49,7 @@ class ViewController: UIViewController {
                 print("Acabei de logar")
             }else{
                 DialogHelper.dialogoErro(mensagemErro: "erro ao realizar o login", view: self)
+                self.btnLogin.isEnabled = true
             }
             
             

@@ -14,6 +14,7 @@ class ToDoTableViewController: UITableViewController {
     var itemTodoList = [ItemTodo]()
     var ref: DatabaseReference?
 
+    @IBOutlet var tbvToDoList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
