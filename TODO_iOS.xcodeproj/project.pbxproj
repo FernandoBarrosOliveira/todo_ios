@@ -14,6 +14,7 @@
 		817BD6A620A71346000F4007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 817BD6A520A71346000F4007 /* Assets.xcassets */; };
 		817BD6A920A71346000F4007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817BD6A720A71346000F4007 /* LaunchScreen.storyboard */; };
 		817BD6B420A71346000F4007 /* TODO_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6B320A71346000F4007 /* TODO_iOSTests.swift */; };
+		817BD6BF20A72184000F4007 /* CadastroViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6BE20A72184000F4007 /* CadastroViewControler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		817BD6AF20A71346000F4007 /* TODO_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODO_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		817BD6B320A71346000F4007 /* TODO_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_iOSTests.swift; sourceTree = "<group>"; };
 		817BD6B520A71346000F4007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		817BD6BE20A72184000F4007 /* CadastroViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewControler.swift; sourceTree = "<group>"; };
 		E3B5CFC0EFA7ADC569894292 /* Pods-TODO_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EAA276B81654FE2CDBF936CB /* Pods-TODO_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 				817BD69E20A71346000F4007 /* AppDelegate.swift */,
 				817BD6A020A71346000F4007 /* ViewController.swift */,
 				817BD6A220A71346000F4007 /* Main.storyboard */,
+				817BD6BE20A72184000F4007 /* CadastroViewControler.swift */,
 				817BD6A520A71346000F4007 /* Assets.xcassets */,
 				817BD6A720A71346000F4007 /* LaunchScreen.storyboard */,
 				817BD6AA20A71346000F4007 /* Info.plist */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817BD6BF20A72184000F4007 /* CadastroViewControler.swift in Sources */,
 				817BD6A120A71346000F4007 /* ViewController.swift in Sources */,
 				817BD69F20A71346000F4007 /* AppDelegate.swift in Sources */,
 			);
