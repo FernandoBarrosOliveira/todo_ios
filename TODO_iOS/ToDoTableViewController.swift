@@ -28,7 +28,7 @@ class ToDoTableViewController: UITableViewController {
                 for items in snapshot.children.allObjects as! [DataSnapshot]{
                     let itemObject = items.value as? [String: AnyObject]
                     let titulo =  itemObject?["titulo"] as? String ?? ""
-                    let descricao  =  itemObject?["titulo"] as? String ?? ""
+                    let descricao  =  itemObject?["descricao"] as? String ?? ""
                     let dataCadastro = itemObject?["dataCadastro"] as? String ?? ""
                     let dataInicio = itemObject?["dataInicio"] as? String ?? ""
                     let dataFim = itemObject?["dataFim"] as? String ?? ""
@@ -114,10 +114,11 @@ class ToDoTableViewController: UITableViewController {
         item = itemTodoList[indexPath.row]
 
         cell.lblTitle.text = item.titulo
-        cell.lblDate.text = dateFormatter.string(from:item.dataCadastro)
+        cell.lblDate.text = dateFormatter.string(from:item.dataInicio)
         dateFormatter.dateFormat = "hh:mm a"
-        cell.lblHour.text = dateFormatter.string(from:item.dataCadastro)
+        cell.lblHour.text = dateFormatter.string(from:item.dataInicio)
         cell.lblPriority.text = String(item.prioridade)
+        cell.swtConclude.isOn = item.status
         
         return cell
     }

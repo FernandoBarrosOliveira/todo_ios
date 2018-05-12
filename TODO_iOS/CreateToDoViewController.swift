@@ -22,14 +22,26 @@ class CreateToDoViewController: UIViewController {
     var item: ItemTodo?
     
     @IBAction func btnCreateClick(_ sender: Any) {
-    
-        var titulo = txtTitle.text
-        var descricao = "hauihauih hauihaiuha"
-        var dateInicio = dtpDate.date
-        var prioridade =  Int(txtPriotiry.text!)
         
-        let item = ItemTodo(id: "", titulo: titulo!, descricao: descricao, dataCadastro: Date(), dataInicio: dateInicio, dataFim: Date(), prioridade: prioridade!, status: false)
-        ref?.child("itemtodo").childByAutoId().setValue(item.toDictionary())
+        if Validar(){
+        
+            var titulo = txtTitle.text
+            var descricao = txtDescription.text
+            var dateInicio = dtpDate.date
+            var prioridade =  Int(txtPriotiry.text!)
+            
+            if let itemAtual = item{
+                let itemUpdate = ItemTodo(id: itemAtual.id, titulo: titulo!, descricao: descricao!, dataCadastro: Date(), dataInicio: dateInicio, dataFim: Date(), prioridade: prioridade!, status: false)
+                ref?.child("itemtodo").child(itemUpdate.id).setValue(itemUpdate.toDictionary())
+                
+
+            } else{
+                let itemAdd = ItemTodo(id: "", titulo: titulo!, descricao: descricao!, dataCadastro: Date(), dataInicio: dateInicio, dataFim: Date(), prioridade: prioridade!, status: false)
+                ref?.child("itemtodo").childByAutoId().setValue(itemAdd.toDictionary())
+            }
+        }
+    
+
         
         
     }
@@ -41,6 +53,7 @@ class CreateToDoViewController: UIViewController {
             txtDescription.text = itemAtual.descricao
             dtpDate.date = itemAtual.dataInicio
             txtPriotiry.text = String(itemAtual.prioridade)
+           // btnToDo.currentTitle = ""
 
         }
         
@@ -51,6 +64,17 @@ class CreateToDoViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func Validar() -> Bool{
+        
+        if (txtPriotiry.text?.isEmpty)! ||
+            (txtTitle.text?.isEmpty)! ||
+            (txtDescription.text?.isEmpty)!{
+            DialogHelper.dialogoErro(mensagemErro: "Existe campos vazios", view: self)
+            return false
+        }
+        return true
     }
     
 
