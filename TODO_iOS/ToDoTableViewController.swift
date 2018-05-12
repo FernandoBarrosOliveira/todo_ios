@@ -7,11 +7,44 @@
 //
 
 import UIKit
+import Firebase
 
 class ToDoTableViewController: UITableViewController {
+    
+    var itemTodoList = [ItemTodo]()
+    var ref: DatabaseReference?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
+        
+        let refItem = ref?.child("itemtodo")
+        refItem?.observe(.value, with: { (snapshot) in
+            if snapshot.childrenCount > 0 {
+                for items in snapshot.children.allObjects as! [DataSnapshot]{
+                    let itemObject = items.value as? [String: AnyObject]
+                    let titulo =  itemObject?["titulo"] as? String ?? ""
+                    let descricao  =  itemObject?["titulo"] as? String ?? ""
+                    let dataCadastro = itemObject?["dataCadastro"] as? String ?? ""
+                    let dataInicio = itemObject?["dataInicio"] as? String ?? ""
+                    let dataFim = itemObject?["dataFim"] as? String ?? ""
+                    let prioridade = itemObject?["prioridade"] as? Int ??  0
+                    let status = itemObject?["status"] as? Bool ?? false
+                
+                    var item = ItemTodo(id:  items.key, titulo: titulo, descricao: descricao, dataCadastro: dateFormatter.date(from: dataCadastro)!, dataInicio: dateFormatter.date(from: dataInicio)!, dataFim: dateFormatter.date(from: dataFim)!, prioridade: prioridade, status: status)
+                    
+                      self.itemTodoList.append(item)
+                    
+                    
+                }
+                //self.companyTableView.reloadData()
+                
+                
+            }
+        })
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,10 +66,12 @@ class ToDoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return itemTodoList.count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+
+        
         return true
     }
     
@@ -50,19 +85,25 @@ class ToDoTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         // Table view cells are reused and should be dequeued using a cell identifier.
         let cellIdentifier = "ToDoTableCell"
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ToDoTableViewCell  else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ToDoTableViewCell else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
         }
+        let item: ItemTodo
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         
-//        cell.lblTitle.text = "Teste"
-//        cell.lblDate.text = "12/05/2018"
-//        cell.lblHour.text = "08:00"
-//        cell.lblPriority.text = "0"
+        item = itemTodoList[indexPath.row]
+
+        cell.lblTitle.text = item.titulo
+        cell.lblDate.text = dateFormatter.string(from:item.dataCadastro)
+        dateFormatter.dateFormat = "hh:mm a"
+        cell.lblHour.text = dateFormatter.string(from:item.dataCadastro)
+        cell.lblPriority.text = String(item.prioridade)
         
         return cell
     }
