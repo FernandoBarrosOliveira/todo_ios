@@ -122,6 +122,18 @@ class ToDoTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "SegueUpdate", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueUpdate"{
+            let cadastroView = segue.destination as! CreateToDoViewController
+            let indexPath = sender as! IndexPath
+            cadastroView.item = itemTodoList[indexPath.row]
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

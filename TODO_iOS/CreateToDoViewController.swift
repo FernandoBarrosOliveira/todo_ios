@@ -19,11 +19,12 @@ class CreateToDoViewController: UIViewController {
     
     @IBOutlet weak var btnToDo: UIButton!
     var ref: DatabaseReference?
+    var item: ItemTodo?
     
     @IBAction func btnCreateClick(_ sender: Any) {
     
         var titulo = txtTitle.text
-        var descricao = "descricao descricao"
+        var descricao = "hauihauih hauihaiuha"
         var dateInicio = dtpDate.date
         var prioridade =  Int(txtPriotiry.text!)
         
@@ -35,6 +36,13 @@ class CreateToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
+        if let itemAtual = item {
+            txtTitle.text = itemAtual.titulo
+            txtDescription.text = itemAtual.descricao
+            dtpDate.date = itemAtual.dataInicio
+            txtPriotiry.text = String(itemAtual.prioridade)
+
+        }
         
 
         // Do any additional setup after loading the view.
