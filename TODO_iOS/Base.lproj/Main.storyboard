@@ -151,7 +151,6 @@
                                     <outlet property="lblPriority" destination="kRO-9j-fqk" id="YC1-Zy-WPN"/>
                                     <outlet property="lblTitle" destination="4B5-rK-men" id="ydi-AX-ta0"/>
                                     <outlet property="swtConclude" destination="anP-Le-vg0" id="E7Y-rr-nU9"/>
-                                    <segue destination="dm2-NZ-SXz" kind="show" id="kpc-1O-lYj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -172,6 +171,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tbvToDoList" destination="qIo-ZD-sfq" id="iDO-D7-KjF"/>
+                        <segue destination="dm2-NZ-SXz" kind="show" identifier="SegueUpdate" id="g4A-aQ-6ue"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VK4-Qb-7Dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,6 +338,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Okt-8U-HBw"/>
+        <segue reference="g4A-aQ-6ue"/>
     </inferredMetricsTieBreakers>
 </document>
