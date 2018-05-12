@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateToDoViewController: UIViewController {
 
@@ -14,10 +15,25 @@ class CreateToDoViewController: UIViewController {
     @IBOutlet weak var txtDescription: UITextView!
     @IBOutlet weak var dtpDate: UIDatePicker!
     @IBOutlet weak var txtPriotiry: UITextField!
+    
+    var ref: DatabaseReference?
+    
     @IBAction func btnCreateClick(_ sender: Any) {
+    
+        var titulo = txtTitle.text
+        var descricao = "descricao descricao"
+        var dateInicio = dtpDate.date
+        var prioridade =  Int(txtPriotiry.text!)
+        
+        let item = ItemTodo(id: "", titulo: titulo!, descricao: descricao, dataCadastro: Date(), dataInicio: dateInicio, dataFim: Date(), prioridade: prioridade!, status: false)
+        ref?.child("itemtodo").childByAutoId().setValue(item.toDictionary())
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        
 
         // Do any additional setup after loading the view.
     }
