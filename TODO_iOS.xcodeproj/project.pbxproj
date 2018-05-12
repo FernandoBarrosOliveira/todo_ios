@@ -18,6 +18,9 @@
 		E4D9821E20A71ABB000F10F4 /* ItemTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9821D20A71ABB000F10F4 /* ItemTodo.swift */; };
 		E4D9822120A72542000F10F4 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D9822020A72542000F10F4 /* DialogHelper.swift */; };
 		E4D9822320A727ED000F10F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4D9822220A727ED000F10F4 /* GoogleService-Info.plist */; };
+		817BD6C320A72A5A000F4007 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6C220A72A5A000F4007 /* ToDoTableViewCell.swift */; };
+		817BD6C520A72C4B000F4007 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6C420A72C4B000F4007 /* ToDoTableViewController.swift */; };
+		817BD6C720A7521C000F4007 /* CreateToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6C620A7521C000F4007 /* CreateToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		817BD6B320A71346000F4007 /* TODO_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_iOSTests.swift; sourceTree = "<group>"; };
 		817BD6B520A71346000F4007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		817BD6BE20A72184000F4007 /* CadastroViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewControler.swift; sourceTree = "<group>"; };
+		817BD6C220A72A5A000F4007 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		817BD6C420A72C4B000F4007 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		817BD6C620A7521C000F4007 /* CreateToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoViewController.swift; sourceTree = "<group>"; };
 		E3B5CFC0EFA7ADC569894292 /* Pods-TODO_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E4D9821D20A71ABB000F10F4 /* ItemTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTodo.swift; sourceTree = "<group>"; };
 		E4D9822020A72542000F10F4 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
@@ -104,9 +110,12 @@
 				E4D9822220A727ED000F10F4 /* GoogleService-Info.plist */,
 				E4D9821F20A71CE8000F10F4 /* helper */,
 				E4D9821A20A71A35000F10F4 /* model */,
+				817BD6C220A72A5A000F4007 /* ToDoTableViewCell.swift */,
 				817BD69E20A71346000F4007 /* AppDelegate.swift */,
 				817BD6A020A71346000F4007 /* ViewController.swift */,
 				817BD6A220A71346000F4007 /* Main.storyboard */,
+				817BD6C620A7521C000F4007 /* CreateToDoViewController.swift */,
+				817BD6C420A72C4B000F4007 /* ToDoTableViewController.swift */,
 				817BD6BE20A72184000F4007 /* CadastroViewControler.swift */,
 				817BD6A520A71346000F4007 /* Assets.xcassets */,
 				817BD6A720A71346000F4007 /* LaunchScreen.storyboard */,
@@ -303,7 +312,10 @@
 				817BD6A120A71346000F4007 /* ViewController.swift in Sources */,
 				E4D9822120A72542000F10F4 /* DialogHelper.swift in Sources */,
 				E4D9821E20A71ABB000F10F4 /* ItemTodo.swift in Sources */,
+				817BD6C720A7521C000F4007 /* CreateToDoViewController.swift in Sources */,
 				817BD69F20A71346000F4007 /* AppDelegate.swift in Sources */,
+				817BD6C320A72A5A000F4007 /* ToDoTableViewCell.swift in Sources */,
+				817BD6C520A72C4B000F4007 /* ToDoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
