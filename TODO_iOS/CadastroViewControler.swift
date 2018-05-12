@@ -42,6 +42,9 @@ class CadastroViewControler: UIViewController {
                     if error == nil{
                         print("usuario criado")
                         
+                        self.dismiss(animated: true, completion: nil)
+                        self.
+                        
                     }else{
                         DialogHelper.dialogoErro(mensagemErro: "Erro ao cadastrar", view: self)
                         print(error.debugDescription)

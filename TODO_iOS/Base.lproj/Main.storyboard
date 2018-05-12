@@ -146,6 +146,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="lblDate" destination="2DN-ON-ZrA" id="DBS-af-8cj"/>
+                                    <outlet property="lblHour" destination="TT0-dj-dbA" id="CyL-O5-Bpg"/>
+                                    <outlet property="lblPriority" destination="kRO-9j-fqk" id="YC1-Zy-WPN"/>
+                                    <outlet property="lblTitle" destination="4B5-rK-men" id="ydi-AX-ta0"/>
                                     <outlet property="swtConclude" destination="anP-Le-vg0" id="E7Y-rr-nU9"/>
                                     <segue destination="dm2-NZ-SXz" kind="show" id="kpc-1O-lYj"/>
                                 </connections>
