@@ -9,7 +9,8 @@
 import Foundation
 
 
-struct itemTodo {
+struct ItemTodo {
+    var id: String
     var titulo: String
     var descricao: String
     var dataCadastro: Date
@@ -17,6 +18,8 @@ struct itemTodo {
     var dataFim: Date
     var prioridade: Int // criar um enum
     var status: Bool
+    
+    
     
     func toDictionary() -> Any {
         let dateFormatter = DateFormatter()
