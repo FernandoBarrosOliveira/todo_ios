@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08E07E4476927249A5A04ACB /* Pods_TODO_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9283A4D3F2D34EE5FB743D /* Pods_TODO_iOS.framework */; };
 		817BD69F20A71346000F4007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD69E20A71346000F4007 /* AppDelegate.swift */; };
 		817BD6A120A71346000F4007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817BD6A020A71346000F4007 /* ViewController.swift */; };
 		817BD6A420A71346000F4007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 817BD6A220A71346000F4007 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B9283A4D3F2D34EE5FB743D /* Pods_TODO_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TODO_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		817BD69B20A71346000F4007 /* TODO_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TODO_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		817BD69E20A71346000F4007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		817BD6A020A71346000F4007 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		817BD6AF20A71346000F4007 /* TODO_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TODO_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		817BD6B320A71346000F4007 /* TODO_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO_iOSTests.swift; sourceTree = "<group>"; };
 		817BD6B520A71346000F4007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3B5CFC0EFA7ADC569894292 /* Pods-TODO_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EAA276B81654FE2CDBF936CB /* Pods-TODO_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TODO_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08E07E4476927249A5A04ACB /* Pods_TODO_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		549740463179B77D883D9412 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3B5CFC0EFA7ADC569894292 /* Pods-TODO_iOS.debug.xcconfig */,
+				EAA276B81654FE2CDBF936CB /* Pods-TODO_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		817BD69220A71346000F4007 = {
 			isa = PBXGroup;
 			children = (
 				817BD69D20A71346000F4007 /* TODO_iOS */,
 				817BD6B220A71346000F4007 /* TODO_iOSTests */,
 				817BD69C20A71346000F4007 /* Products */,
+				549740463179B77D883D9412 /* Pods */,
+				AD214BDDF9A4AD657A35F53E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +112,14 @@
 			path = TODO_iOSTests;
 			sourceTree = "<group>";
 		};
+		AD214BDDF9A4AD657A35F53E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B9283A4D3F2D34EE5FB743D /* Pods_TODO_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 817BD6B820A71346000F4007 /* Build configuration list for PBXNativeTarget "TODO_iOS" */;
 			buildPhases = (
+				D67A6486DC13D5EB35EDDA04 /* [CP] Check Pods Manifest.lock */,
 				817BD69720A71346000F4007 /* Sources */,
 				817BD69820A71346000F4007 /* Frameworks */,
 				817BD69920A71346000F4007 /* Resources */,
+				2E46BD9AF2B19B9BF9E14B7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +219,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E46BD9AF2B19B9BF9E14B7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TODO_iOS/Pods-TODO_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D67A6486DC13D5EB35EDDA04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TODO_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		817BD69720A71346000F4007 /* Sources */ = {
@@ -351,6 +422,7 @@
 		};
 		817BD6B920A71346000F4007 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B5CFC0EFA7ADC569894292 /* Pods-TODO_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +437,7 @@
 		};
 		817BD6BA20A71346000F4007 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAA276B81654FE2CDBF936CB /* Pods-TODO_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
