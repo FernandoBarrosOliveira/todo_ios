@@ -36,7 +36,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="btnSignUpClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWD-Ue-vLW"/>
-                                    <segue destination="f6K-2w-NwG" kind="show" id="VGF-Bz-Hme"/>
+                                    <segue destination="f6K-2w-NwG" kind="show" identifier="grantedSegue" id="VGF-Bz-Hme"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO DO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acj-8a-Ase">
@@ -50,7 +50,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="btnLoginClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qhv-9m-sbh"/>
-                                    <segue destination="0RI-qz-ti8" kind="show" identifier="SegueToDoList" id="LLI-GV-BsZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,8 +74,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="jQ0-SS-s7C"/>
                     <connections>
+                        <outlet property="btnLogin" destination="Sku-Ad-DEx" id="AdT-nb-hPn"/>
                         <outlet property="txtPassword" destination="2Qh-ZU-EDu" id="fDe-6r-1Sf"/>
                         <outlet property="txtUser" destination="Sgt-rL-aPw" id="yFS-8y-NhU"/>
+                        <segue destination="0RI-qz-ti8" kind="show" identifier="SegueToDoList" id="O70-Oz-MD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -165,6 +166,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tbvToDoList" destination="qIo-ZD-sfq" id="iDO-D7-KjF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VK4-Qb-7Dw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

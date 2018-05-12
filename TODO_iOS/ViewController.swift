@@ -13,21 +13,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-
+    @IBOutlet weak var btnLogin: UIButton!
+    
     var ref: DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnLogin.isEnabled = true
 //        ref = Database.database().reference()
             //add()
 //        readAll()
         
-        Auth.auth().addStateDidChangeListener({ (auth, user) in
-            print(user?.email)
-            if user != nil {
-                print(user?.email)
-                self.performSegue(withIdentifier: "grantedSegue", sender: nil)
-            }
-        })
+//        Auth.auth().addStateDidChangeListener({ (auth, user) in
+ //           print(user?.email ?? " ")
+//            if user != nil {
+//                print(user?.email ?? " " )
+//                self.performSegue(withIdentifier: "grantedSegue", sender: nil)
+//            }
+//        })
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -38,13 +40,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnLoginClick(_ sender: Any) {
+        
+        btnLogin.isEnabled = false
+        
         Auth.auth().signIn(withEmail: txtUser.text!, password: txtPassword.text!, completion: { (user, error) in
             
             if error == nil{
-                self.performSegue(withIdentifier: "SegueTodoList", sender: nil)
+                self.performSegue(withIdentifier: "SegueToDoList", sender: nil)
                 print("Acabei de logar")
             }else{
                 DialogHelper.dialogoErro(mensagemErro: "erro ao realizar o login", view: self)
+                self.btnLogin.isEnabled = true
             }
             
             
