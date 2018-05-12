@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CadastroViewControler: UIViewController {
 
@@ -25,6 +26,32 @@ class CadastroViewControler: UIViewController {
     }
     
     @IBAction func btnConfirm(_ sender: Any) {
+        
+        if (txtCadastroUser.text?.isEmpty)! ||
+            (txtCadastroPassword.text?.isEmpty)! ||
+            (txtCadastroConfirmPassword.text?.isEmpty)!{
+            DialogHelper.dialogoErro(mensagemErro: "Existe campos vazios", view: self)
+            
+            
+        }else
+            if txtCadastroPassword.text != txtCadastroConfirmPassword.text {
+                DialogHelper.dialogoErro(mensagemErro: "Password não são iguais", view: self)
+                
+            }else{
+                Auth.auth().createUser(withEmail: txtCadastroUser.text!, password: txtCadastroPassword.text!, completion: { (user, error) in
+                    if error == nil{
+                        print("usuario criado")
+                        
+                    }else{
+                        DialogHelper.dialogoErro(mensagemErro: "Erro ao cadastrar", view: self)
+                        print(error.debugDescription)
+                    }
+                    
+                    
+                })
+                
+                
+        }
     }
     
     /*

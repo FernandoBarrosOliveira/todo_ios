@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -25,8 +26,29 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnLoginClick(_ sender: Any) {
+        Auth.auth().signIn(withEmail: txtUser.text!, password: txtPassword.text!, completion: { (user, error) in
+            
+            if error == nil{
+                self.performSegue(withIdentifier: "grantedSegue", sender: nil)
+                print("Acabei de logar")
+            }else{
+                DialogHelper.dialogoErro(mensagemErro: "erro ao realizar o login", view: self)
+            }
+            
+            
+        })
+        
     }
     @IBAction func btnSignUpClick(_ sender: Any) {
+        super.viewDidLoad()
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
+            print(user?.email)
+            if user != nil {
+                print(user?.email)
+                self.performSegue(withIdentifier: "grantedSegue", sender: nil)
+            }
+        })
+        
     }
 
 }
