@@ -41,8 +41,7 @@ class CadastroViewControler: UIViewController {
                 Auth.auth().createUser(withEmail: txtCadastroUser.text!, password: txtCadastroPassword.text!, completion: { (user, error) in
                     if error == nil{
                         print("usuario criado")
-                        
-                        self.dismiss(animated: true, completion: nil)
+                        self.navigationController?.dismiss(animated: true, completion: nil)
                         
                     }else{
                         DialogHelper.dialogoErro(mensagemErro: "Erro ao cadastrar", view: self)

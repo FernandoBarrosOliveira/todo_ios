@@ -77,6 +77,17 @@ class ToDoTableViewController: UITableViewController {
         return true
     }
     
+    @IBAction func btnLogOutClick(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
+        } catch let error as NSError {
+            print("Nao conseguimos sair: \(error)")
+        }
+        
+    }
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Del") { (action, currentIndexPath) in
             let item = self.itemTodoList[indexPath.row]

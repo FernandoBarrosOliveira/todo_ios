@@ -162,6 +162,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDo List" id="OaV-yv-Yaf">
+                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="zKJ-fd-ZQ8">
+                            <connections>
+                                <action selector="btnLogOutClick:" destination="0RI-qz-ti8" id="1oc-IT-j51"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New +" id="ePm-iY-VCT">
                             <connections>
                                 <segue destination="dm2-NZ-SXz" kind="show" id="Okt-8U-HBw"/>
