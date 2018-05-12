@@ -13,23 +13,22 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var txtUser: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var btnLogin: UIButton!
-    
+
     var ref: DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
         btnLogin.isEnabled = true
 //        ref = Database.database().reference()
-            //add()
+ //      add()
 //        readAll()
         
-//        Auth.auth().addStateDidChangeListener({ (auth, user) in
- //           print(user?.email ?? " ")
-//            if user != nil {
-//                print(user?.email ?? " " )
-//                self.performSegue(withIdentifier: "grantedSegue", sender: nil)
-//            }
-//        })
+        Auth.auth().addStateDidChangeListener({ (auth, user) in
+            print(user?.email)
+            if user != nil {
+                print(user?.email)
+                self.performSegue(withIdentifier: "SegueToDoList", sender: nil)
+            }
+        })
         // Do any additional setup after loading the view, typically from a nib.
     }
     
